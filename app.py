@@ -10,7 +10,7 @@ from linebot.exceptions import (
     InvalidSignatureError
 )
 from linebot.models import *
-import re
+
 app = Flask(__name__)
 
 # 必須放上自己的Channel Access Token
@@ -44,7 +44,7 @@ def callback():
 def handle_message(event):
     message = TextSendMessage(text=event.message.text)
     line_bot_api.reply_message(event.reply_token,message)
-    
+
 #主程式
 import os
 if __name__ == "__main__":
